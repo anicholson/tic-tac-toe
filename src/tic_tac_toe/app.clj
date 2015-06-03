@@ -26,15 +26,20 @@
       (recur (read-move-entry))))
 )
 
+(defn print-board [board]
+  (println (subvec board 0 3))
+  (println (subvec board 3 6))
+  (println (subvec board 6 9))
+  )
 
 (defn print-winner [player board]
   (print player)
   (println " wins!")
-  (core/print-board board))
+  (print-board board))
 
 (defn print-draw [board]
   (println "Game drawn.")
-  (core/print-board board))
+  (print-board board))
 
 (defn -main [& args]
   (println "Let's play tic-tac-toe")
@@ -42,7 +47,7 @@
   (loop [board (core/empty-board) player (core/start-player)]
     (print player)
     (println " to play.")
-    (core/print-board board)
+    (print-board board)
 
     (let [move (read-move board)]
       (let [

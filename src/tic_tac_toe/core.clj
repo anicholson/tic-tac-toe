@@ -28,12 +28,6 @@
   )
 
 
-(defn print-board [board]
-  (println (subvec board 0 3))
-  (println (subvec board 3 6))
-  (println (subvec board 6 9))
-  )
-
 (defn empty-square? [square]
   (= EMPTY square))
 
